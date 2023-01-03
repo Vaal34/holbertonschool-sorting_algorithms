@@ -5,7 +5,7 @@
 /**
  * quick_sort - quick sort algorithm
  * @array: array of number
- * @size size of array
+ * @size: size of array
  */
 
 void quick_sort(int *array, size_t size)
