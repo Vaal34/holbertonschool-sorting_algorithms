@@ -21,8 +21,7 @@ void insertion_sort_list(listint_t **list);
 				{
 					tmp->n = nextnode;
 					list->n = tmp->n;
-
-				}
 			}
 		}
 	}
+}
