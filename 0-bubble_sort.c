@@ -1,11 +1,22 @@
 #include "sort.h"
 #include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * bubble_sort - sorting with bubble algoritmhs
+ * @array: array sort
+ * @size: size of array
+ */
+
 
 void bubble_sort(int *array, size_t size)
 {
 	int swap;
 	size_t i = 0, j = 0;
+
+	if (array == NULL)
+		exit(98);
 
 	for (j = 0; j < size - 1; j++)
 	{
