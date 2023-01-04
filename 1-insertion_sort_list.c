@@ -2,10 +2,8 @@
 #include <stdlib.h>
 #include "sort.h"
 /**
- * size_list - returns the number of nodes in a doubly linked list
+ * insertion_sort_list - returns the number of nodes in a doubly linked list
  * @list: pointer to the head of the list
- *
- * Return: the number of nodes in the list, or 0 if the list is empty
  */
 
 void insertion_sort_list(listint_t **list)
