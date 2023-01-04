@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include "sort.h"
 /**
- * insertion_sort_list - returns the number of nodes in a doubly linked list
- * @list: pointer to the head of the list
+ * insertion_sort_list - sorts a doubly linked list of integers in ascending
+ * order using the insertion sort algorithm
+ * @list: pointer to a pointer to the head of the list
  */
 
 void insertion_sort_list(listint_t **list)
@@ -11,12 +12,8 @@ void insertion_sort_list(listint_t **list)
 	listint_t *node;
 	listint_t *tmp;
 
-	if (list == NULL)
-		exit(9);
-
 	node = *list;
-
-		while (node)
+	while (node)
 	{
 		while (node->prev && node->prev->n > node->n)
 		{
@@ -29,6 +26,7 @@ void insertion_sort_list(listint_t **list)
 				node->prev->next = node;
 			node->next = tmp;
 			tmp->prev = node;
+			*list = (*list)->prev;
 			print_list(*list);
 		}
 		node = node->next;
