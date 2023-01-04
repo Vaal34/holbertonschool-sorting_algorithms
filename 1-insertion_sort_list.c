@@ -13,6 +13,9 @@ void insertion_sort_list(listint_t **list)
 
 	node = *list;
 
+	if (list == NULL)
+		exit(9);
+
 	while (node)
 	{
 		while (node->prev && node->prev->n > node->n)
