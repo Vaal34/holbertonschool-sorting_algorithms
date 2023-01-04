@@ -6,7 +6,6 @@
  * order using the insertion sort algorithm
  * @list: pointer to a pointer to the head of the list
  */
-
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *node;
@@ -15,18 +14,19 @@ void insertion_sort_list(listint_t **list)
 	node = *list;
 	while (node)
 	{
-		while (node->prev && node->prev->n > node->n)
+		while (node->prev != NULL && node->prev->n > node->n)
 		{
 			tmp = node->prev;
 			tmp->next = node->next;
-			if (tmp->next)
+			if (tmp->next != NULL)
 				tmp->next->prev = tmp;
 			node->prev = tmp->prev;
-			if (node->prev)
+			if (node->prev != NULL)
 				node->prev->next = node;
 			node->next = tmp;
 			tmp->prev = node;
-			*list = (*list)->prev;
+			if (node->prev == NULL)
+				*list = node;
 			print_list(*list);
 		}
 		node = node->next;
