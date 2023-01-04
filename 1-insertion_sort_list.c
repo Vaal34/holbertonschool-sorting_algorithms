@@ -11,12 +11,12 @@ void insertion_sort_list(listint_t **list)
 	listint_t *node;
 	listint_t *tmp;
 
-	node = *list;
-
 	if (list == NULL)
 		exit(9);
 
-	while (node)
+	node = *list;
+
+		while (node)
 	{
 		while (node->prev && node->prev->n > node->n)
 		{
